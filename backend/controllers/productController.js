@@ -59,11 +59,11 @@ const deleteProduct = asyncHandler(async (req, res) => {
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
     name: 'Sample name',
-    price: 0,
+    type: 'Sample type',
     user: req.user._id,
     image: '/images/sample.jpg',
-    type: 'Sample category',
     description: 'Sample description',
+    price: 'Sample price',
   })
 
   const createdProduct = await product.save()
@@ -74,7 +74,7 @@ const createProduct = asyncHandler(async (req, res) => {
 // @route   PUT /api/products/:id
 // @access  Private/Admin
 const updateProduct = asyncHandler(async (req, res) => {
-  const { name, price, description, image } = req.body
+  const { name, price, description, image, type } = req.body
 
   const product = await Product.findById(req.params.id)
 
@@ -83,6 +83,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.price = price
     product.description = description
     product.image = image
+    product.type = type
 
     const updatedProduct = await product.save()
     res.json(updatedProduct)
