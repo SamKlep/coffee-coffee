@@ -6,6 +6,7 @@ import Header from './components/Header'
 import './App.css'
 import RegisterScreen from './screens/RegisterScreen'
 import LoginScreen from './screens/LoginScreen'
+import ProductScreen from './screens/ProductScreen'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <Route path='/register' component={RegisterScreen} exact />
         <Route path='/login' component={LoginScreen} exact />
+        <Route path='/products/:id' component={ProductScreen} />
         <Route path='/' component={HomeScreen} exact />
       </Router>
     </React.Fragment>
