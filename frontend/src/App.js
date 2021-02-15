@@ -7,6 +7,12 @@ import './App.css'
 import RegisterScreen from './screens/RegisterScreen'
 import LoginScreen from './screens/LoginScreen'
 import ProductScreen from './screens/ProductScreen'
+import OrderScreen from './screens/OrderScreen'
+import MenuScreen from './screens/MenuScreen'
+import FeaturesScreen from './screens/FeaturesScreen'
+import ProfileScreen from './screens/ProfileScreen'
+import MyDrinksScreen from './screens/MyDrinksScreen'
+import InboxScreen from './screens/InboxScreen'
 
 function App() {
   return (
@@ -14,8 +20,14 @@ function App() {
       <CssBaseline />
       <Router>
         <Header />
-        <Route path='/register' component={RegisterScreen} exact />
-        <Route path='/login' component={LoginScreen} exact />
+        <Route path='/register' component={RegisterScreen} />
+        <Route path='/login' component={LoginScreen} />
+        <Route path='/profile' component={ProfileScreen} />
+        <Route path='/mydrinks' component={MyDrinksScreen} />
+        <Route path='/inbox' component={InboxScreen} />
+        <Route path='/order' component={OrderScreen} />
+        <Route path='/menu' component={MenuScreen} />
+        <Route path='/features' component={FeaturesScreen} />
         <Route path='/products/:id' component={ProductScreen} />
         <Route path='/' component={HomeScreen} exact />
       </Router>

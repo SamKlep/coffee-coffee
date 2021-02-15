@@ -13,15 +13,15 @@ const Header = () => {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href='#features'>Features</Nav.Link>
-            <Nav.Link href='#pricing'>Order</Nav.Link>
-            <Nav.Link href='#pricing'>Menu</Nav.Link>
+            <Nav.Link href='/features'>Features</Nav.Link>
+            <Nav.Link href='/order'>Order</Nav.Link>
+            <Nav.Link href='/menu'>Menu</Nav.Link>
             <NavDropdown title='Account' id='collasible-nav-dropdown'>
-              <NavDropdown.Item href='#action/3.1'>Profile</NavDropdown.Item>
+              <NavDropdown.Item href='/profile'>Profile</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='#action/3.2'>My Drinks</NavDropdown.Item>
+              <NavDropdown.Item href='/mydrinks'>My Drinks</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='#action/3.3'>Messages</NavDropdown.Item>
+              <NavDropdown.Item href='/inbox'>Inbox</NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav>

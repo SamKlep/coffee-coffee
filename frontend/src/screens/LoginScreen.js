@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import FormContainer from '../components/FormContainer'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const LoginScreen = ({ location, history }) => {
-  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -12,8 +12,20 @@ const LoginScreen = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    // dispatch(login(email, password))
-    // axios call to backend
+    axios
+      .post('/api/users/login', {
+        email,
+        password,
+      })
+      .then(
+        (response) => {
+          console.log(response)
+          history.push(redirect)
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
   }
 
   return (
